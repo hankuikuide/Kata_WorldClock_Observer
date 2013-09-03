@@ -24,7 +24,7 @@ namespace CTBJ.WorldClock.UI
             clock.attach(Sydney);
             clock.attach(NewYork);
 
-            clock.setUTCTime(DateTime.Parse("2013-9-2 0:00:00"));
+            clock.setUtcTime(DateTime.Parse("2013-9-2 0:00:00"));
             Console.WriteLine();
 
             Beijing.adjustTime(clock, DateTime.Parse("2013-9-2 9:00:00"));

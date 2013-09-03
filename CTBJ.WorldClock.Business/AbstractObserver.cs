@@ -32,7 +32,7 @@ namespace CTBJ.WorldClock.Business
         /// <param name="time"></param>
         public void adjustTime(AbstractSubject clock, DateTime time)
         {
-            clock.setUTCTime(time.AddHours(-this.utc));
+            clock.setUtcTime(time.AddHours(-this.utc));
         }
 
         public abstract void syncTimeServer(DateTime utcTime);

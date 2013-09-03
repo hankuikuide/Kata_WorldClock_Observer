@@ -27,7 +27,7 @@ namespace CTBJ.WorldClock.Business
 
         }
 
-        public abstract void setUTCTime(DateTime utcTime);
+        public abstract void setUtcTime(DateTime utcTime);
 
         protected void notify()
         {

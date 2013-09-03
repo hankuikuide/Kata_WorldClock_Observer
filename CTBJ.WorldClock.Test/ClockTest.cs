@@ -30,7 +30,7 @@ namespace CTBJ.WorldClock.Test
 
             attachObervers(clock);
 
-            clock.setUTCTime(DateTime.Parse("2013-9-2 0:00:00"));
+            clock.setUtcTime(DateTime.Parse("2013-9-2 0:00:00"));
 
             for (int i = 0; i < clock.Observers.Count; i++)
             {
@@ -62,7 +62,7 @@ namespace CTBJ.WorldClock.Test
 
             attachObervers(clock);
 
-            clock.setUTCTime(DateTime.Parse("2013-9-2 0:00:00"));
+            clock.setUtcTime(DateTime.Parse("2013-9-2 0:00:00"));
             Beijing.adjustTime(clock, DateTime.Parse("2013-9-2 9:00:00"));
             for (int i = 0; i < clock.Observers.Count; i++)
             {
@@ -86,7 +86,7 @@ namespace CTBJ.WorldClock.Test
 
             attachObervers(clock);
 
-            clock.setUTCTime(DateTime.Parse("2013-9-2 0:00:00"));
+            clock.setUtcTime(DateTime.Parse("2013-9-2 0:00:00"));
             London.adjustTime(clock, DateTime.Parse("2013-10-28 0:00:00"));
             for (int i = 0; i < clock.Observers.Count; i++)
             {

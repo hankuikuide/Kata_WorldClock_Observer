@@ -13,7 +13,7 @@ namespace CTBJ.WorldClock.Business
             return new ConcreteClockSubject();
         }
 
-        public override void setUTCTime(DateTime utcTime)
+        public override void setUtcTime(DateTime utcTime)
         {
             base.utcTime = utcTime;
 
