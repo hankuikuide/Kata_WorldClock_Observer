@@ -10,13 +10,13 @@ namespace CTBJ.WorldClock.UI
     {
         static void Main(string[] args)
         {
-            AbstractObserver Beijing = new ConcreteCityOberver("Beijing",8);
-            AbstractObserver London = new ConcreteCityOberver("London", 0);
-            AbstractObserver Moscow = new ConcreteCityOberver("Moscow", 4);
-            AbstractObserver Sydney = new ConcreteCityOberver("Sydney", 10);
-            AbstractObserver NewYork = new ConcreteCityOberver("NewYork", -5);
+            AbstractObserver Beijing = ConcreteCityOberver.getInstance("Beijing", 8);
+            AbstractObserver London = ConcreteCityOberver.getInstance("London", 0);
+            AbstractObserver Moscow = ConcreteCityOberver.getInstance("Moscow", 4);
+            AbstractObserver Sydney = ConcreteCityOberver.getInstance("Sydney", 10);
+            AbstractObserver NewYork = ConcreteCityOberver.getInstance("NewYork", -5);
 
-            ConcreteClockSubject clock = new ConcreteClockSubject();
+            ConcreteClockSubject clock = ConcreteClockSubject.getInstance();
 
             clock.attach(Beijing);
             clock.attach(London);

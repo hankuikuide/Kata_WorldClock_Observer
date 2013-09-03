@@ -8,6 +8,11 @@ namespace CTBJ.WorldClock.Business
     public class ConcreteClockSubject:AbstractSubject
     {
 
+        public static ConcreteClockSubject getInstance()
+        {
+            return new ConcreteClockSubject();
+        }
+
         public override void setUTCTime(DateTime utcTime)
         {
             base.utcTime = utcTime;

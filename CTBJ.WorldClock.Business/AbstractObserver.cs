@@ -24,6 +24,7 @@ namespace CTBJ.WorldClock.Business
             this.utc = utc;
         }
 
+
         /// <summary>
         /// manully adjust time, and notity the subject with utcTime
         /// </summary>

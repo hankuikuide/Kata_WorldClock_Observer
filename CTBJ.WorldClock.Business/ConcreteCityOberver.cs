@@ -13,6 +13,12 @@ namespace CTBJ.WorldClock.Business
 
         }
 
+
+        public static ConcreteCityOberver getInstance(string city, int utc)
+        {
+            return new ConcreteCityOberver(city, utc);
+        }
+
         public override void autoUpdate(DateTime utcTime)
         {
 

@@ -10,11 +10,11 @@ namespace CTBJ.WorldClock.Test
     [TestClass]
     public class ClockTest
     {
-        AbstractObserver Beijing = new ConcreteCityOberver("Beijing", 8);
-        AbstractObserver London = new ConcreteCityOberver("London", 0);
-        AbstractObserver Moscow = new ConcreteCityOberver("Moscow", 4);
-        AbstractObserver Sydney = new ConcreteCityOberver("Sydney", 10);
-        AbstractObserver NewYork = new ConcreteCityOberver("NewYork", -5);
+        AbstractObserver Beijing = ConcreteCityOberver.getInstance("Beijing", 8);
+        AbstractObserver London = ConcreteCityOberver.getInstance("London", 0);
+        AbstractObserver Moscow = ConcreteCityOberver.getInstance("Moscow", 4);
+        AbstractObserver Sydney = ConcreteCityOberver.getInstance("Sydney", 10);
+        AbstractObserver NewYork = ConcreteCityOberver.getInstance("NewYork", -5);
 
         [TestMethod]
         public void ShowTimeTest()
@@ -26,7 +26,7 @@ namespace CTBJ.WorldClock.Test
             expected.Add(DateTime.Parse("2013-9-2 10:00:00"));
             expected.Add(DateTime.Parse("2013-9-1 20:00:00"));
 
-            ConcreteClockSubject clock = new ConcreteClockSubject();
+            ConcreteClockSubject clock = ConcreteClockSubject.getInstance();
 
             attachObervers(clock);
 
@@ -58,7 +58,7 @@ namespace CTBJ.WorldClock.Test
             expected.Add(DateTime.Parse("2013-9-2 11:00:00"));
             expected.Add(DateTime.Parse("2013-9-1 21:00:00"));
 
-            ConcreteClockSubject clock = new ConcreteClockSubject();
+            ConcreteClockSubject clock = ConcreteClockSubject.getInstance();
 
             attachObervers(clock);
 
@@ -82,7 +82,7 @@ namespace CTBJ.WorldClock.Test
             expected.Add(DateTime.Parse("2013-10-28 10:00:00"));
             expected.Add(DateTime.Parse("2013-10-27 20:00:00"));
 
-            ConcreteClockSubject clock = new ConcreteClockSubject();
+            ConcreteClockSubject clock = ConcreteClockSubject.getInstance();
 
             attachObervers(clock);
 
