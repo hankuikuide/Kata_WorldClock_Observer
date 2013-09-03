@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="AbstractSubject.cs" />
     <Compile Include="ConcreteClockSubject.cs" />
-    <Compile Include="ConcreteCityOberver.cs" />
+    <Compile Include="ConcreteCityObserver.cs" />
     <Compile Include="DST.cs" />
     <Compile Include="AbstractObserver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

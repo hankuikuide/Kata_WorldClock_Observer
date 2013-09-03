@@ -5,18 +5,18 @@ using System.Text;
 
 namespace CTBJ.WorldClock.Business
 {
-    public class ConcreteCityOberver:AbstractObserver
+    public class ConcreteCityObserver:AbstractObserver
     {
 
-        public ConcreteCityOberver(string city,int utc):base(city,utc)
+        public ConcreteCityObserver(string city,int utc):base(city,utc)
         {
 
         }
 
 
-        public static ConcreteCityOberver getInstance(string city, int utc)
+        public static ConcreteCityObserver getInstance(string city, int utc)
         {
-            return new ConcreteCityOberver(city, utc);
+            return new ConcreteCityObserver(city, utc);
         }
 
         public override void autoUpdate(DateTime utcTime)

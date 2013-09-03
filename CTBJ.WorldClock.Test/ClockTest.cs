@@ -10,11 +10,11 @@ namespace CTBJ.WorldClock.Test
     [TestClass]
     public class ClockTest
     {
-        AbstractObserver Beijing = ConcreteCityOberver.getInstance("Beijing", 8);
-        AbstractObserver London = ConcreteCityOberver.getInstance("London", 0);
-        AbstractObserver Moscow = ConcreteCityOberver.getInstance("Moscow", 4);
-        AbstractObserver Sydney = ConcreteCityOberver.getInstance("Sydney", 10);
-        AbstractObserver NewYork = ConcreteCityOberver.getInstance("NewYork", -5);
+        AbstractObserver Beijing = ConcreteCityObserver.getInstance("Beijing", 8);
+        AbstractObserver London = ConcreteCityObserver.getInstance("London", 0);
+        AbstractObserver Moscow = ConcreteCityObserver.getInstance("Moscow", 4);
+        AbstractObserver Sydney = ConcreteCityObserver.getInstance("Sydney", 10);
+        AbstractObserver NewYork = ConcreteCityObserver.getInstance("NewYork", -5);
 
         [TestMethod]
         public void ShowTimeTest()
