@@ -35,6 +35,6 @@ namespace CTBJ.WorldClock.Business
             clock.setUTCTime(time.AddHours(-this.utc));
         }
 
-        public abstract void autoUpdate(DateTime utcTime);
+        public abstract void syncTimeServer(DateTime utcTime);
     }
 }
