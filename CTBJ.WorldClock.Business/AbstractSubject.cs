@@ -31,7 +31,7 @@ namespace CTBJ.WorldClock.Business
         {
             foreach (var observer in observers)
             {
-                observer.syncTimeServer(this.utcTime);
+                observer.syncWithTimeServer(this.utcTime);
             }
         }
     }

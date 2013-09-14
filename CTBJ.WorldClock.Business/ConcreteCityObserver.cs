@@ -19,7 +19,7 @@ namespace CTBJ.WorldClock.Business
             return new ConcreteCityObserver(city, utc);
         }
 
-        public override void syncTimeServer(DateTime utcTime)
+        public override void syncWithTimeServer(DateTime utcTime)
         {
 
             base.time=utcTime.AddHours(base.utc);
