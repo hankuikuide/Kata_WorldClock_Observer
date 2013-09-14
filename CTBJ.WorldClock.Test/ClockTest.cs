@@ -2,12 +2,13 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CTBJ.WorldClock.Business;
+using NUnit.Framework;
+
 
 namespace CTBJ.WorldClock.Test
 {
-    [TestClass]
+    [TestFixture]
     public class ClockTest
     {
         AbstractObserver Beijing = ConcreteCityObserver.getInstance("Beijing", 8);
@@ -16,7 +17,7 @@ namespace CTBJ.WorldClock.Test
         AbstractObserver Sydney = ConcreteCityObserver.getInstance("Sydney", 10);
         AbstractObserver NewYork = ConcreteCityObserver.getInstance("NewYork", -5);
 
-        [TestMethod]
+        [Test]
         public void ShowTimeTest()
         {
             List<DateTime> expected = new List<DateTime>();
@@ -48,7 +49,7 @@ namespace CTBJ.WorldClock.Test
             clock.attach(NewYork);
         }
 
-        [TestMethod]
+        [Test]
         public void adjustTimeText()
         {
             List<DateTime> expected = new List<DateTime>();
@@ -72,7 +73,7 @@ namespace CTBJ.WorldClock.Test
             London.adjustTime(clock, DateTime.Parse("2013-10-28 0:00:00"));
         }
 
-        [TestMethod]
+        [Test]
         public void endDSTTimeText()
         {
             List<DateTime> expected = new List<DateTime>();
