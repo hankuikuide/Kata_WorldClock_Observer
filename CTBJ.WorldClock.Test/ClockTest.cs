@@ -11,11 +11,24 @@ namespace CTBJ.WorldClock.Test
     [TestFixture]
     public class ClockTest
     {
-        AbstractObserver Beijing = ConcreteCityObserver.getInstance("Beijing", 8);
-        AbstractObserver London = ConcreteCityObserver.getInstance("London", 0);
-        AbstractObserver Moscow = ConcreteCityObserver.getInstance("Moscow", 4);
-        AbstractObserver Sydney = ConcreteCityObserver.getInstance("Sydney", 10);
-        AbstractObserver NewYork = ConcreteCityObserver.getInstance("NewYork", -5);
+        private AbstractObserver Beijing;
+        private AbstractObserver London;
+        private AbstractObserver Moscow;
+        private AbstractObserver Sydney;
+        private AbstractObserver NewYork;
+        private ConcreteClockSubject clock;
+
+        [SetUp]
+        public void Init()
+        {
+            Beijing = ConcreteCityObserver.getInstance("Beijing", 8);
+            London = ConcreteCityObserver.getInstance("London", 0);
+            Moscow = ConcreteCityObserver.getInstance("Moscow", 4);
+            Sydney = ConcreteCityObserver.getInstance("Sydney", 10);
+            NewYork = ConcreteCityObserver.getInstance("NewYork", -5);
+
+            clock = ConcreteClockSubject.getInstance();
+        }
 
         [Test]
         public void ShowTimeTest()
@@ -27,9 +40,8 @@ namespace CTBJ.WorldClock.Test
             expected.Add(DateTime.Parse("2013-9-2 10:00:00"));
             expected.Add(DateTime.Parse("2013-9-1 20:00:00"));
 
-            ConcreteClockSubject clock = ConcreteClockSubject.getInstance();
 
-            attachObervers(clock);
+            attachObervers();
 
             clock.setUtcTime(DateTime.Parse("2013-9-2 0:00:00"));
 
@@ -40,7 +52,7 @@ namespace CTBJ.WorldClock.Test
 
         }
 
-        private void attachObervers(ConcreteClockSubject clock)
+        private void attachObervers()
         {
             clock.attach(Beijing);
             clock.attach(London);
@@ -59,9 +71,7 @@ namespace CTBJ.WorldClock.Test
             expected.Add(DateTime.Parse("2013-9-2 11:00:00"));
             expected.Add(DateTime.Parse("2013-9-1 21:00:00"));
 
-            ConcreteClockSubject clock = ConcreteClockSubject.getInstance();
-
-            attachObervers(clock);
+            attachObervers();
 
             clock.setUtcTime(DateTime.Parse("2013-9-2 0:00:00"));
             Beijing.adjustTime(clock, DateTime.Parse("2013-9-2 9:00:00"));
@@ -83,9 +93,7 @@ namespace CTBJ.WorldClock.Test
             expected.Add(DateTime.Parse("2013-10-28 10:00:00"));
             expected.Add(DateTime.Parse("2013-10-27 20:00:00"));
 
-            ConcreteClockSubject clock = ConcreteClockSubject.getInstance();
-
-            attachObervers(clock);
+            attachObervers();
 
             clock.setUtcTime(DateTime.Parse("2013-9-2 0:00:00"));
             London.adjustTime(clock, DateTime.Parse("2013-10-28 0:00:00"));
