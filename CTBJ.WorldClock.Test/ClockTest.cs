@@ -27,7 +27,7 @@ namespace CTBJ.WorldClock.Test
             Sydney = ConcreteCityObserver.newInstance("Sydney", 10);
             NewYork = ConcreteCityObserver.newInstance("NewYork", -5);
 
-            clock = ConcreteClockSubject.getInstance();
+            clock = ConcreteClockSubject.newInstance();
 
             attachObervers();
             clock.setUtcTime(DateTime.Parse("2013-9-2 0:00:00"));

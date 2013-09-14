@@ -8,7 +8,7 @@ namespace CTBJ.WorldClock.Business
     public class ConcreteClockSubject:AbstractSubject
     {
 
-        public static ConcreteClockSubject getInstance()
+        public static ConcreteClockSubject newInstance()
         {
             return new ConcreteClockSubject();
         }

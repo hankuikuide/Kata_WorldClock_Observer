@@ -16,7 +16,7 @@ namespace CTBJ.WorldClock.UI
             AbstractObserver Sydney = ConcreteCityObserver.newInstance("Sydney", 10);
             AbstractObserver NewYork = ConcreteCityObserver.newInstance("NewYork", -5);
 
-            ConcreteClockSubject clock = ConcreteClockSubject.getInstance();
+            ConcreteClockSubject clock = ConcreteClockSubject.newInstance();
 
             clock.attach(Beijing);
             clock.attach(London);
