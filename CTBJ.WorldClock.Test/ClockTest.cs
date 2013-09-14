@@ -21,11 +21,11 @@ namespace CTBJ.WorldClock.Test
         [SetUp]
         public void Init()
         {
-            Beijing = ConcreteCityObserver.getInstance("Beijing", 8);
-            London = ConcreteCityObserver.getInstance("London", 0);
-            Moscow = ConcreteCityObserver.getInstance("Moscow", 4);
-            Sydney = ConcreteCityObserver.getInstance("Sydney", 10);
-            NewYork = ConcreteCityObserver.getInstance("NewYork", -5);
+            Beijing = ConcreteCityObserver.newInstance("Beijing", 8);
+            London = ConcreteCityObserver.newInstance("London", 0);
+            Moscow = ConcreteCityObserver.newInstance("Moscow", 4);
+            Sydney = ConcreteCityObserver.newInstance("Sydney", 10);
+            NewYork = ConcreteCityObserver.newInstance("NewYork", -5);
 
             clock = ConcreteClockSubject.getInstance();
         }

@@ -14,7 +14,7 @@ namespace CTBJ.WorldClock.Business
         }
 
 
-        public static ConcreteCityObserver getInstance(string city, int utc)
+        public static ConcreteCityObserver newInstance(string city, int utc)
         {
             return new ConcreteCityObserver(city, utc);
         }
