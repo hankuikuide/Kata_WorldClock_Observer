@@ -24,7 +24,7 @@ namespace CTBJ.WorldClock.Business
 
             base.time=utcTime.AddHours(base.utc);
 
-            base.time = new DST().adjust(base.city,base.time);
+            base.time = DST.adjust(base.city,base.time);
 
             Console.WriteLine("the time of city:{0} is {1}",base.city,base.time);
         }
