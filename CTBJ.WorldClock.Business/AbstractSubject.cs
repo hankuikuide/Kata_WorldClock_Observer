@@ -5,6 +5,9 @@ using System.Text;
 
 namespace CTBJ.WorldClock.Business
 {
+    // Need not to have an abstractSubject since there is only one concrete subject. 
+    // Only when there are two or more concrete subjects, we can extract an
+    // abstract class.
     public abstract class AbstractSubject
     {
         protected DateTime utcTime;
