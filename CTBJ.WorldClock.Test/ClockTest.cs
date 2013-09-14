@@ -45,7 +45,7 @@ namespace CTBJ.WorldClock.Test
 
             for (int i = 0; i < clock.Observers.Count; i++)
             {
-                Assert.AreEqual(expected[i], clock.Observers[i].time);
+                Assert.AreEqual(expected[i], clock.Observers[i].GetTime());
             }
 
         }
@@ -72,7 +72,7 @@ namespace CTBJ.WorldClock.Test
             Beijing.adjustTime(clock, DateTime.Parse("2013-9-2 9:00:00"));
             for (int i = 0; i < clock.Observers.Count; i++)
             {
-                Assert.AreEqual(expected[i], clock.Observers[i].time);
+                Assert.AreEqual(expected[i], clock.Observers[i].GetTime());
             }
 
             London.adjustTime(clock, DateTime.Parse("2013-10-28 0:00:00"));
@@ -91,7 +91,7 @@ namespace CTBJ.WorldClock.Test
             London.adjustTime(clock, DateTime.Parse("2013-10-28 0:00:00"));
             for (int i = 0; i < clock.Observers.Count; i++)
             {
-                Assert.AreEqual(expected[i], clock.Observers[i].time);
+                Assert.AreEqual(expected[i], clock.Observers[i].GetTime());
             }
 
         }

@@ -11,7 +11,7 @@ namespace CTBJ.WorldClock.Business
         protected int utc;
 
         //for easy test ,change protected to public 
-        public DateTime time;
+        protected DateTime time;
 
         /// <summary>
         /// Constructor
@@ -36,5 +36,10 @@ namespace CTBJ.WorldClock.Business
         }
 
         public abstract void syncWithTimeServer(DateTime utcTime);
+
+        public DateTime GetTime()
+        {
+            return time;
+        }
     }
 }
