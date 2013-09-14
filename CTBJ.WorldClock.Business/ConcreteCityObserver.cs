@@ -14,17 +14,17 @@ namespace CTBJ.WorldClock.Business
         }
 
 
-        public static ConcreteCityObserver getInstance(string city, int utc)
+        public static ConcreteCityObserver newInstance(string city, int utc)
         {
             return new ConcreteCityObserver(city, utc);
         }
 
-        public override void syncTimeServer(DateTime utcTime)
+        public override void syncWithTimeServer(DateTime utcTime)
         {
 
             base.time=utcTime.AddHours(base.utc);
 
-            base.time = new DST().adjust(base.city,base.time);
+            base.time = DST.adjust(base.city,base.time);
 
             Console.WriteLine("the time of city:{0} is {1}",base.city,base.time);
         }
