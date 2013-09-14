@@ -24,11 +24,6 @@ namespace CTBJ.WorldClock.Business
             observers.Add(observer);
         }
 
-        public void detach(AbstractObserver observer)
-        {
-            observers.Remove(observer);
-
-        }
 
         public abstract void setUtcTime(DateTime utcTime);
 
