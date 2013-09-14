@@ -30,7 +30,7 @@ namespace CTBJ.WorldClock.Business
         /// </summary>
         /// <param name="clock">notity the subject with utcTime</param>
         /// <param name="time"></param>
-        public void adjustTime(AbstractSubject clock, DateTime time)
+        public void adjustTime(ConcreteClockSubject clock, DateTime time)
         {
             clock.setUtcTime(time.AddHours(-this.utc));
         }

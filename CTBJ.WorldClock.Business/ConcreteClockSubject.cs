@@ -5,21 +5,40 @@ using System.Text;
 
 namespace CTBJ.WorldClock.Business
 {
-    public class ConcreteClockSubject:AbstractSubject
+    public class ConcreteClockSubject
     {
+        protected DateTime utcTime;
+        private List<AbstractObserver> observers = new List<AbstractObserver>();
+
+        public List<AbstractObserver> Observers
+        {
+            get { return observers; }           
+        }
 
         public static ConcreteClockSubject newInstance()
         {
             return new ConcreteClockSubject();
         }
 
-        public override void setUtcTime(DateTime utcTime)
+        public void setUtcTime(DateTime utcTime)
         {
-            base.utcTime = utcTime;
+            this.utcTime = utcTime;
 
-            base.notify();
+            notify();
         }
 
 
+        public void attach(AbstractObserver observer)
+        {
+            observers.Add(observer);
+        }
+
+        protected void notify()
+        {
+            foreach (var observer in observers)
+            {
+                observer.syncWithTimeServer(this.utcTime);
+            }
+        }
     }
 }
