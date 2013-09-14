@@ -11,7 +11,7 @@ namespace CTBJ.WorldClock.Business
         protected int utc;
 
         //for easy test ,change protected to public 
-        public DateTime time;
+        protected DateTime time;
 
         /// <summary>
         /// Constructor
@@ -30,11 +30,16 @@ namespace CTBJ.WorldClock.Business
         /// </summary>
         /// <param name="clock">notity the subject with utcTime</param>
         /// <param name="time"></param>
-        public void adjustTime(AbstractSubject clock, DateTime time)
+        public void adjustTime(ConcreteClockSubject clock, DateTime time)
         {
             clock.setUtcTime(time.AddHours(-this.utc));
         }
 
-        public abstract void syncTimeServer(DateTime utcTime);
+        public abstract void syncWithTimeServer(DateTime utcTime);
+
+        public DateTime GetTime()
+        {
+            return time;
+        }
     }
 }

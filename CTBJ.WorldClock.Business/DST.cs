@@ -5,15 +5,12 @@ using System.Text;
 
 namespace CTBJ.WorldClock.Business
 {
-    class DST
+    static class DST
     {
-        private DateTime begin;
+        private static DateTime begin;
 
-        private DateTime end;
+        private static DateTime end;
       
-        public DST()
-        {           
-        }
 
         /// <summary>
         /// special city adjust
@@ -21,20 +18,20 @@ namespace CTBJ.WorldClock.Business
         /// <param name="city"></param>
         /// <param name="currentTime"></param>
         /// <returns></returns>
-        public DateTime adjust(string city, DateTime currentTime)
+        public static DateTime adjust(string city, DateTime currentTime)
         {
             DateTime time;
             switch (city)
             {
                 case "London":
-                    this.begin = DateTime.Parse(currentTime.Year + "-3-31");
-                    this.end = DateTime.Parse(currentTime.Year + "-10-27");
-                    time = this.getDSTTime(currentTime);
+                    begin = DateTime.Parse(currentTime.Year + "-3-31");
+                    end = DateTime.Parse(currentTime.Year + "-10-27");
+                    time = getDSTTime(currentTime);
                     break;
                 case "NewYork":
-                    this.begin = DateTime.Parse(currentTime.Year + "-3-10");
-                    this.end = DateTime.Parse(currentTime.Year + "-11-3");
-                    time = this.getDSTTime(currentTime);
+                    begin = DateTime.Parse(currentTime.Year + "-3-10");
+                    end = DateTime.Parse(currentTime.Year + "-11-3");
+                    time = getDSTTime(currentTime);
                     break;
                 default:
                     time = currentTime;
@@ -44,9 +41,9 @@ namespace CTBJ.WorldClock.Business
             return time;
         }
 
-        private DateTime getDSTTime(DateTime time)
+        private static DateTime getDSTTime(DateTime time)
         {
-            if (time >= this.begin && time <= this.end)
+            if (time >= begin && time <= end)
             {
                  time =time.AddHours(1);
             }
